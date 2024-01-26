@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --white:#fff;
+    --dark:#1e1c2a;
+    --darkblue:#210683;
+}
+body{
+    color: var(--dark);
+    background: var(--white);
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+}
+.navigation .logo{
+    color: var(--darkblue);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-right: 4rem;
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.navigation ul li a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.navigation ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--darkblue);
+    bottom: 0;
+    left: 0;
+    transform: scaleY(0); /* Inicialmente, a barra estará invisível */
+    transform-origin: bottom; /* Modificamos a origem da transformação */
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigation ul li a:hover::before {
+    transform: scaleY(1); /* Ao passar o mouse, a barra se expande de baixo para cima */
+}
+
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+
+.logo{
+    color: var(--darkblue);
+    font-weight: 600;
+}
+
+.titulo{
+    color: var(--darkblue);
+}
+.home{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    margin-bottom: -20px;
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-family: monospace;
+    font-size: 24px;
+    border-right: 4px solid;
+    width: 29ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(29),
+    blinking 0.5s infinite step-end alternate
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
+.home-text .text-h1{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 4rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.home-btn:hover{
+    background: #fc4c35;
+}
+.home-img img{
+    width: 100%;
+}
+
+.produtos {
+    padding: 20px 10%; /* Adicionei um espaçamento na parte superior e inferior da seção */
+    text-align: center; /* Centraliza o texto dentro da seção */
+    margin-top: -20px;
+}
+
+.produtos .text-h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 4rem;
+    color: var(--dark);
+}
+
+.produtos-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+}
+.subtitle {
+    font-size: 23px;
+    font-weight: 600;
+}
+.produto-imagem {
+    display: flex;
+    justify-content: space-around; /* Para espaçamento uniforme entre as imagens */
+    margin-top: 20px; /* Ajuste conforme necessário para o espaçamento entre o texto e as imagens */
+}
+
+.servicos {
+    padding: 20px 10%; /* Adicionei um espaçamento na parte superior e inferior da seção */
+    text-align: center; /* Centraliza o texto dentro da seção */
+    margin-top: -20px;
+}
+
+.servicos .text-h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 4rem;
+    color: var(--dark);
+}
+
+.imagens-servicos {
+    display: flex;
+    justify-content: space-around; /* Para espaçamento uniforme entre as imagens */
+    margin-top: 20px; /* Ajuste conforme necessário para o espaçamento entre o texto e as imagens */
+}
+
+.imagens-servicos img {
+    max-width: 48%; /* Ajuste conforme necessário para o tamanho das imagens */
+}
+
+.empresa {
+    padding: 20px 10%;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.empresa .text-h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 4rem;
+    color: var(--dark);
+}
+
+.parcerias{
+    font-weight: 600;
+}
+
+/* Adicione a seguinte regra para destacar o item ativo no menu de navegação */
+.nav-menu li.active a {
+    color: var(--darkblue);
+    position: relative;
+    font-weight: 800;
+}
+
+/* Adicione a seguinte regra para destacar o ícone ativo no menu de navegação */
+.nav-menu li.active::before {
+    background-color: var(--darkblue);
+    font-weight: bold
+}
+
+/* Adicione ao seu arquivo style.css */
+
+.valores-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Para que os blocos fiquem abaixo uns dos outros em telas pequenas */
+    margin-top: 40px; /* Ajuste conforme necessário para o espaçamento entre os valores e a imagem */
+}
+
+.valor {
+    text-align: center;
+    max-width: 300px; /* Ajuste conforme necessário para o tamanho dos blocos */
+}
+
+.valor h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--darkblue);
+}
+
+.valor p {
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.imagem-rebralto {
+    margin-top: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--darkblue);
+    color: var(--white);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.creditos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
